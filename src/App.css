@@ -1,0 +1,241 @@
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+/* ================= ROOT VARIABLES ================= */
+:root {
+  --primary: #2563eb;
+  --secondary: #7c3aed;
+  --dark: #0f172a;
+  --light: #f8fafc;
+  --text: #1e293b;
+  --muted: #64748b;
+}
+
+/* ================= GLOBAL RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+body {
+  background: var(--light);
+  color: var(--text);
+}
+
+/* ================= NAVBAR ================= */
+.custom-navbar {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  padding: 12px 0;
+}
+
+.brand-text {
+  font-size: 24px;
+  font-weight: 800;
+  color: #fff !important;
+  letter-spacing: 1px;
+}
+
+.nav-link-custom {
+  color: #fff !important;
+  font-weight: 500;
+  position: relative;
+  margin: 0 10px;
+}
+
+.nav-link-custom::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: #fff;
+  transition: 0.3s;
+}
+
+.nav-link-custom:hover::after {
+  width: 100%;
+}
+
+.nav-cta {
+  background: #fff;
+  color: var(--primary);
+  font-weight: 600;
+  border-radius: 20px;
+  padding: 6px 16px;
+}
+
+/* ================= HERO ================= */
+.hero-img {
+  height: 75vh;
+  object-fit: cover;
+  filter: brightness(85%);
+}
+
+.hero-caption {
+  background: rgba(0, 0, 0, 0.55);
+  padding: 30px;
+  border-radius: 14px;
+  backdrop-filter: blur(4px);
+}
+
+/* ================= SECTION ================= */
+.section {
+  padding: 80px 0;
+}
+
+.section-title {
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* ================= CARDS ================= */
+.click-card {
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+.click-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+}
+
+.card img {
+  height: 220px;
+  object-fit: cover;
+}
+
+/* ================= VIDEO ================= */
+.video-card {
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.trust-video {
+  height: 320px;
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.7));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+}
+
+/* ================= CTA ================= */
+.cta-section {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  padding: 80px 20px;
+  color: white;
+  text-align: center;
+  border-radius: 20px;
+}
+
+/* ================= LOGIN (GLASS STYLE) ================= */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  background: linear-gradient(135deg, #dbeafe, #ede9fe);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 45px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+  animation: fadeUp 0.6s ease;
+}
+
+.login-btn {
+  width: 100%;
+  border-radius: 30px !important;
+  background: linear-gradient(90deg, var(--primary), var(--secondary)) !important;
+  color: white !important;
+  height: 48px;
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* ================= FOOTER ================= */
+.footer-main {
+  background: var(--dark);
+  color: #cbd5f5;
+  padding: 70px 0 30px;
+}
+
+.footer-brand {
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.footer-links li:hover {
+  color: white;
+  transform: translateX(4px);
+}
+
+.footer-social i {
+  font-size: 18px;
+  margin-right: 12px;
+  transition: 0.3s;
+}
+
+.footer-social i:hover {
+  transform: translateY(-3px);
+  color: white;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .section {
+    padding: 50px 0;
+  }
+
+  .hero-img {
+    height: 60vh;
+  }
+
+  .card img {
+    height: 180px;
+  }
+
+  .login-card {
+    padding: 30px 20px;
+  }
+}
